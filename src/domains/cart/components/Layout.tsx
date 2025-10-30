@@ -24,12 +24,12 @@ export default function Layout({ children }: { children: React.ReactNode }) {
       <header className="flex flex-col gap-y-3 sm:flex-row justify-between items-center px-6 py-4 shadow-lg bg-white/90 dark:bg-slate-950/90 sticky top-0 z-10 mb-6 border-b border-gray-100 dark:border-slate-900">
         {/* Logo */}
         <div className="text-3xl font-black tracking-tight text-blue-700 dark:text-blue-200 mr-4">
-          FakeStore
+          Product Catalog Viewer
         </div>
         {/* Filter/Search Controls */}
-        <div className="flex items-center gap-4 flex-1 justify-center">
+        <div className="flex flex-col md:flex-row items-center gap-4 flex-1 justify-center md:justify-between w-full">
           {/* Category Buttons */}
-          <div className="flex gap-1 flex-wrap">
+          <div className="flex flex-wrap justify-center md:justify-start gap-2 w-full md:w-auto">
             {categories.map((c) => {
               const value = c === "all" ? "" : c;
               const active = filter === value || (filter === "" && c === "all");
@@ -39,7 +39,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
                   onClick={() => dispatch(setFilter(value))}
                   className={`px-3 py-1.5 rounded-full text-xs sm:text-sm font-medium border transition-all shadow-sm ${
                     active
-                      ? "bg-linear-to-r from-blue-600 to-indigo-600 text-white border-blue-700 scale-105 shadow-lg"
+                      ? "bg-gradient-to-r from-blue-600 to-indigo-600 text-white border-blue-700 scale-105 shadow-lg"
                       : "bg-gray-100 dark:bg-slate-900 border-gray-200 dark:border-slate-700 hover:bg-gray-200 dark:hover:bg-slate-800 text-gray-700 dark:text-gray-200"
                   }`}
                 >
@@ -48,26 +48,30 @@ export default function Layout({ children }: { children: React.ReactNode }) {
               );
             })}
           </div>
+
           {/* Search Input */}
-          <div className="relative">
+          <div className="relative w-full md:w-auto flex justify-center md:justify-end">
             <input
               type="text"
               placeholder="Search..."
-              className="border border-gray-200 dark:border-slate-600 bg-white text-white dark:bg-slate-900 rounded-full px-4 py-2 text-xs sm:text-sm w-44 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition"
+              className="border border-gray-200 dark:border-slate-600 bg-white dark:bg-slate-900 text-gray-800 dark:text-white rounded-full px-4 py-2 text-sm w-full sm:w-60 md:w-44 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition"
               value={search}
               onChange={(e) => dispatch(setSearch(e.target.value))}
             />
             <CiSearch className="absolute right-3 top-2.5 text-gray-400 text-lg" />
           </div>
         </div>
+
         {/* Cart */}
-        <button
-          aria-label="Open cart"
-          onClick={() => setCartOpen(true)}
-          className="focus:outline-none cursor-pointer ml-4"
-        >
-          <CartSummary />
-        </button>
+        <div className="self-end">
+          <button
+            aria-label="Open cart"
+            onClick={() => setCartOpen(true)}
+            className="focus:outline-none cursor-pointer ml-4"
+          >
+            <CartSummary />
+          </button>
+        </div>
       </header>
       {/* Landing Hero Section */}
       <section className="w-full py-16 pb-10 flex flex-col items-center justify-center text-center gap-4 mb-10">
