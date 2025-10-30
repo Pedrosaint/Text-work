@@ -4,7 +4,7 @@ A simple yet elegant e-commerce simulation app built with **React + Redux Toolki
 
 ---
 
-## 🚀 Features
+## Features
 
 ### 1. Fetch & Display Products
 - Products fetched dynamically from Fake Store API.
@@ -37,7 +37,7 @@ A simple yet elegant e-commerce simulation app built with **React + Redux Toolki
 
 ---
 
-## ⚙️ Setup Instructions
+##  Setup Instructions
 
 ### 1. Clone the Repository
 ```bash
@@ -67,7 +67,7 @@ npm run preview
 
 ---
 
-## 📦 Dependencies
+##  Dependencies
 
 ```json
 "dependencies": {
@@ -86,7 +86,7 @@ npm run preview
 
 ---
 
-## 💰 Utility Example
+## Utility Example
 
 For currency formatting, prices are displayed in **Naira (₦)** using this helper:
 
@@ -109,7 +109,7 @@ export function formatNaira(amount: number | string): string {
 
 ---
 
-## 📱 Responsiveness & UX
+## Responsiveness & UX
 - Fully responsive for desktop, tablet, and mobile.
 - Clean modern UI using Tailwind’s utility classes.
 - Animated product interactions with Framer Motion.
@@ -117,12 +117,10 @@ export function formatNaira(amount: number | string): string {
 
 ---
 
-## 📝 Notes / Assumptions
+##  Notes / Assumptions
 - The app uses Fake Store API for demo data.
 - No backend authentication or payments implemented — simulation only.
 - Cart data is stored in local storage for persistence.
 
 ---
 
-### 🔗 Live Demo
-*(Add your Vercel or Netlify link here when deployed)*
